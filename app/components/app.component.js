@@ -43,9 +43,10 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                         directives: [hero_detail_component_1.HeroDetailComponent],
                         providers: [hero_service_1.HeroService]
                     }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof hero_service_1.HeroService !== 'undefined' && hero_service_1.HeroService) === 'function' && _a) || Object])
                 ], AppComponent);
                 return AppComponent;
+                var _a;
             })();
             exports_1("AppComponent", AppComponent);
         }

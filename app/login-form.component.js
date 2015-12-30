@@ -9,28 +9,30 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var LoginComponent;
+    var LoginFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            LoginComponent = (function () {
-                function LoginComponent(email, password) {
+            LoginFormComponent = (function () {
+                function LoginFormComponent(email, password) {
                     this.email = email;
                     this.password = password;
+                    this.title = 'CityCorner Login';
                 }
-                LoginComponent = __decorate([
+                LoginFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'login-app',
+                        selector: 'login-form',
+                        templateUrl: './app/templates/login-form.component.html'
                     }), 
                     __metadata('design:paramtypes', [String, String])
-                ], LoginComponent);
-                return LoginComponent;
+                ], LoginFormComponent);
+                return LoginFormComponent;
             })();
-            exports_1("LoginComponent", LoginComponent);
+            exports_1("LoginFormComponent", LoginFormComponent);
         }
     }
 });
-//# sourceMappingURL=login.component.js.map
+//# sourceMappingURL=login-form.component.js.map

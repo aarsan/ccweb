@@ -29,7 +29,7 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                 }
                 AppComponent.prototype.getHeroes = function () {
                     var _this = this;
-                    this._heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
+                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
                 };
                 AppComponent.prototype.ngOnInit = function () {
                     this.getHeroes();
@@ -38,7 +38,7 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<h2>My Heroes</h2>\n\t\t<ul class=\"heroes\">\n\t\t\t<li *ngFor=\"#hero of heroes\"\n\t\t\t\t[class.selected]=\"hero === selectedHero\"\n\t\t\t\t(click)=\"onSelect(hero)\">\n\t\t\t\t<span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t\t\t</li>\n\t\t</ul>\n\t\t<my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n\t\t",
+                        templateUrl: './app/templates/heroes-title.html',
                         styles: ["\n\t\t.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n\t\t.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n\t\t.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n\t\t.heroes .badge {\n\t\t\tfont-size: small;\n\t\t\tcolor: white;\n\t\t\tpadding: 0.1em 0.7em;\n\t\t\tbackground-color: #369;\n\t\t\tline-height: 1em;\n\t\t\tposition: relative;\n\t\t\tleft: -1px;\n\t\t\ttop: -1px;\n\t\t}\n\t\t.selected { background-color: #EEE; color: #369; }\n\t"],
                         directives: [hero_detail_component_1.HeroDetailComponent],
                         providers: [hero_service_1.HeroService]

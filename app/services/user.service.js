@@ -1,4 +1,4 @@
-System.register(['./mock-logins', 'angular2/core'], function(exports_1) {
+System.register(['../data/mock-users', 'angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,38 +8,38 @@ System.register(['./mock-logins', 'angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var mock_logins_1, core_1;
-    var LoginService;
+    var mock_users_1, core_1;
+    var UserService;
     return {
         setters:[
-            function (mock_logins_1_1) {
-                mock_logins_1 = mock_logins_1_1;
+            function (mock_users_1_1) {
+                mock_users_1 = mock_users_1_1;
             },
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            LoginService = (function () {
-                function LoginService() {
+            UserService = (function () {
+                function UserService() {
                 }
-                LoginService.prototype.getHeroes = function () {
-                    return Promise.resolve(mock_logins_1.HEROES);
+                UserService.prototype.getUsers = function () {
+                    return Promise.resolve(mock_users_1.USERS);
                 };
-                LoginService.prototype.getHeroesSlowly = function () {
+                UserService.prototype.getUsersSlowly = function () {
                     return new Promise(function (resolve) {
-                        return setTimeout(function () { return resolve(mock_logins_1.HEROES); }, 2000);
+                        return setTimeout(function () { return resolve(mock_users_1.USERS); }, 2000);
                     } // 2 seconds
                      // 2 seconds
                     );
                 };
-                LoginService = __decorate([
+                UserService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], LoginService);
-                return LoginService;
+                ], UserService);
+                return UserService;
             })();
-            exports_1("LoginService", LoginService);
+            exports_1("UserService", UserService);
         }
     }
 });
-//# sourceMappingURL=login.service.js.map
+//# sourceMappingURL=user.service.js.map

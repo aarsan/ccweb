@@ -1,4 +1,4 @@
-import {User} from './hero';
+import {User} from '../user';
 
 export var USERS: User[] = [
 	{ "id": 1, "email": "aarsan@progger.com", "password": "123" },

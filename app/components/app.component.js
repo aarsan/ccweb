@@ -1,4 +1,4 @@
-System.register(['angular2/core', './hero-detail.component', './hero.service'], function(exports_1) {
+System.register(['angular2/core', './hero-detail.component', '../services/hero.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -37,16 +37,15 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                 AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: './app/templates/heroes-title.html',
+                        selector: 'citycorner',
+                        templateUrl: '../app/templates/heroes-title.html',
                         styles: ["\n\t\t.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n\t\t.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n\t\t.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n\t\t.heroes .badge {\n\t\t\tfont-size: small;\n\t\t\tcolor: white;\n\t\t\tpadding: 0.1em 0.7em;\n\t\t\tbackground-color: #369;\n\t\t\tline-height: 1em;\n\t\t\tposition: relative;\n\t\t\tleft: -1px;\n\t\t\ttop: -1px;\n\t\t}\n\t\t.selected { background-color: #EEE; color: #369; }\n\t"],
                         directives: [hero_detail_component_1.HeroDetailComponent],
                         providers: [hero_service_1.HeroService]
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof hero_service_1.HeroService !== 'undefined' && hero_service_1.HeroService) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], AppComponent);
                 return AppComponent;
-                var _a;
             })();
             exports_1("AppComponent", AppComponent);
         }

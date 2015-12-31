@@ -1,11 +1,16 @@
 import {Component, OnInit} from 'angular2/core';
-import {Hero} from './hero';
+import {RouteConfig, RouterOutlet} from 'angular2/router';
+
+
+import {Hero} from '../hero';
+import {User} from '../user';
 import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from './hero.service';
+import {HeroService} from '../services/hero.service';
+import {UserService} from '../services/user.service';
 
 @Component({
-	selector: 'my-app',
-	templateUrl: './app/templates/heroes-title.html',
+	selector: 'citycorner',
+	templateUrl: '../app/templates/heroes-title.html',
 	styles: [`
 		.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
 		.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
@@ -25,6 +30,10 @@ import {HeroService} from './hero.service';
 	directives: [HeroDetailComponent],
 	providers: [HeroService]
 })
+
+// @RouteConfig([
+	
+// ])
 
 export class AppComponent implements OnInit {
 	public title = 'Tour of Heroes';

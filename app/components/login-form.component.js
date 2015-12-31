@@ -24,7 +24,7 @@ System.register(['angular2/core'], function(exports_1) {
                 }
                 LoginFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'login-form',
+                        selector: 'citycorner',
                         templateUrl: './app/templates/login-form.component.html'
                     }), 
                     __metadata('design:paramtypes', [String, String])

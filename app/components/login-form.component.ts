@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {NgForm}    from 'angular2/common';
 
 @Component({
-	selector: 'login-form',
+	selector: 'citycorner',
 	templateUrl: './app/templates/login-form.component.html'
 })
 

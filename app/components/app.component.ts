@@ -1,6 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
-
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Hero} from '../hero';
 import {User} from '../user';
@@ -8,9 +7,12 @@ import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from '../services/hero.service';
 import {UserService} from '../services/user.service';
 
+import {CrisisListComponent}   from './crisis-list.component';
+import {HeroListComponent}     from './hero-list.component';
+
 @Component({
 	selector: 'citycorner',
-	templateUrl: '../app/templates/heroes-title.html',
+	templateUrl: '../app/templates/component-router.html',
 	styles: [`
 		.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
 		.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
@@ -27,16 +29,17 @@ import {UserService} from '../services/user.service';
 		}
 		.selected { background-color: #EEE; color: #369; }
 	`],
-	directives: [HeroDetailComponent],
+	directives: [HeroDetailComponent, ROUTER_DIRECTIVES],
 	providers: [HeroService]
 })
 
-// @RouteConfig([
-	
-// ])
+@RouteConfig([
+	{path:'/crisis-center', name: 'CrisisCenter', component: CrisisListComponent},
+	{path:'/heroes', name: 'Heroes', component: HeroListComponent}
+])
 
 export class AppComponent implements OnInit {
-	public title = 'Tour of Heroes';
+	public title = 'CityCorner';
 	public heroes: Hero[];
 	public selectedHero: Hero;
 	

@@ -1,14 +1,14 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {Hero} from '../hero';
-import {User} from '../user';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from '../services/hero.service';
-import {UserService} from '../services/user.service';
+import {Hero} from './hero';
+import {User} from './user';
+import {HeroDetailComponent} from './heroes/hero-detail.component';
+import {HeroService} from './heroes/hero.service';
+import {UserService} from './services/user.service';
 
-import {CrisisListComponent}   from './crisis-list.component';
-import {HeroListComponent}     from './hero-list.component';
+import {CrisisListComponent}   from './components/crisis-list.component';
+import {HeroListComponent}     from './heroes/hero-list.component';
 
 @Component({
 	selector: 'citycorner',
@@ -35,7 +35,8 @@ import {HeroListComponent}     from './hero-list.component';
 
 @RouteConfig([
 	{path:'/crisis-center', name: 'CrisisCenter', component: CrisisListComponent},
-	{path:'/heroes', name: 'Heroes', component: HeroListComponent}
+	{path:'/heroes', name: 'Heroes', component: HeroListComponent},
+	{path:'/hero/:id',      name: 'HeroDetail',   component: HeroDetailComponent}
 ])
 
 export class AppComponent implements OnInit {

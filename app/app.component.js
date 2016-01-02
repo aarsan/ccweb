@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero-detail.component', '../services/hero.service', './crisis-list.component', './hero-list.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './heroes/hero-detail.component', './heroes/hero.service', './components/crisis-list.component', './heroes/hero-list.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,7 +54,8 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
                     }),
                     router_1.RouteConfig([
                         { path: '/crisis-center', name: 'CrisisCenter', component: crisis_list_component_1.CrisisListComponent },
-                        { path: '/heroes', name: 'Heroes', component: hero_list_component_1.HeroListComponent }
+                        { path: '/heroes', name: 'Heroes', component: hero_list_component_1.HeroListComponent },
+                        { path: '/hero/:id', name: 'HeroDetail', component: hero_detail_component_1.HeroDetailComponent }
                     ]), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], AppComponent);

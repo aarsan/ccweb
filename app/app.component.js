@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './heroes/hero-detail.component', './heroes/hero.service', './components/crisis-list.component', './heroes/hero-list.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './heroes/hero-list.component', './heroes/hero-detail.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './heroes/hero-detail.compo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_detail_component_1, hero_service_1, crisis_list_component_1, hero_list_component_1;
+    var core_1, router_1, hero_list_component_1, hero_detail_component_1;
     var AppComponent;
     return {
         setters:[
@@ -18,46 +18,28 @@ System.register(['angular2/core', 'angular2/router', './heroes/hero-detail.compo
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (hero_detail_component_1_1) {
-                hero_detail_component_1 = hero_detail_component_1_1;
-            },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
-            },
-            function (crisis_list_component_1_1) {
-                crisis_list_component_1 = crisis_list_component_1_1;
-            },
             function (hero_list_component_1_1) {
                 hero_list_component_1 = hero_list_component_1_1;
+            },
+            function (hero_detail_component_1_1) {
+                hero_detail_component_1 = hero_detail_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_heroService) {
-                    this._heroService = _heroService;
-                    this.title = 'CityCorner';
+                function AppComponent() {
                 }
-                AppComponent.prototype.getHeroes = function () {
-                    var _this = this;
-                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-                };
-                AppComponent.prototype.ngOnInit = function () {
-                    this.getHeroes();
-                };
-                AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'citycorner',
-                        templateUrl: '../app/templates/component-router.html',
-                        styles: ["\n\t\t.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n\t\t.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n\t\t.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n\t\t.heroes .badge {\n\t\t\tfont-size: small;\n\t\t\tcolor: white;\n\t\t\tpadding: 0.1em 0.7em;\n\t\t\tbackground-color: #369;\n\t\t\tline-height: 1em;\n\t\t\tposition: relative;\n\t\t\tleft: -1px;\n\t\t\ttop: -1px;\n\t\t}\n\t\t.selected { background-color: #EEE; color: #369; }\n\t"],
-                        directives: [hero_detail_component_1.HeroDetailComponent, router_1.ROUTER_DIRECTIVES],
-                        providers: [hero_service_1.HeroService]
+                        template: "\n\t\t<h1>Component Router</h1>\n\t\t<a [routerLink]=\"['CrisisCenter']\">Crisis Center</a>\n\t\t<a [routerLink]=\"['Heroes']\">Heroes</a>\n\t\t<router-outlet></router-outlet>\n\t",
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }),
                     router_1.RouteConfig([
-                        { path: '/crisis-center', name: 'CrisisCenter', component: crisis_list_component_1.CrisisListComponent },
+                        // {path:'/crisis-center', name: 'CrisisCenter', component: CrisisListComponent},
                         { path: '/heroes', name: 'Heroes', component: hero_list_component_1.HeroListComponent },
                         { path: '/hero/:id', name: 'HeroDetail', component: hero_detail_component_1.HeroDetailComponent }
                     ]), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService])
+                    __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             })();

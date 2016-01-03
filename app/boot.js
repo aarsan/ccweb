@@ -1,5 +1,5 @@
-System.register(['angular2/platform/browser', './app.component', 'angular2/router'], function(exports_1) {
-    var browser_1, app_component_1, router_1;
+System.register(['angular2/platform/browser', './app.component', 'angular2/router', './heroes/hero.service'], function(exports_1) {
+    var browser_1, app_component_1, router_1, hero_service_1;
     return {
         setters:[
             function (browser_1_1) {
@@ -10,12 +10,16 @@ System.register(['angular2/platform/browser', './app.component', 'angular2/route
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (hero_service_1_1) {
+                hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
             // import {LoginFormComponent} from './components/login-form.component'
             // bootstrap(LoginFormComponent);
             browser_1.bootstrap(app_component_1.AppComponent, [
-                router_1.ROUTER_PROVIDERS,
+                hero_service_1.HeroService,
+                router_1.ROUTER_PROVIDERS
             ]);
         }
     }
